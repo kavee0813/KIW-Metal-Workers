@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KIW Construction & Metal Works</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+    }
+    main {
+      flex: 1;
+    }
+    header, footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 1rem;
+      text-decoration: none;
+    }
+    section {
+      padding: 2rem;
+    }
+    form {
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    input, textarea {
+      padding: 0.5rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background: #222;
+      color: #fff;
+      padding: 0.7rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    footer {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>KIW Metal Construction</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="gallery.html">Gallery</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>About Us</h2>
+      <p>
+        KIW is a professional construction company specializing in high-quality metal works —
+        including roofing, grill making, ceilings, welding services, and gate design.
+        Our skilled team is ready to bring your ideas to life with strength and style.
+      </p>
+    </section>
+
+    <section id="contact">
+  <h2>Hire Us</h2>
+  <form id="contactForm">
+    <input type="text" id="name" name="name" placeholder="Your Name" required />
+    <input type="email" id="email" name="email" placeholder="Your Email" required />
+    <textarea id="message" name="message" rows="5" placeholder="Tell us about your project..." required></textarea>
+    <button type="submit">Discuss Your Project</button>
+  </form>
+</section>
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission
+
+    // Get form values
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    // Construct the message to send via WhatsApp
+    const whatsappMessage = `Name: ${name}%0AEmail: ${email}%0AProject: ${message}`;
+
+    // Open WhatsApp with the pre-filled message
+    const whatsappLink = `https://wa.me/94779746977?text=${whatsappMessage}`;
+    window.open(whatsappLink, '_blank');
+  });
+</script>
+
+
+  </main>
+
+ <footer>
+  <p>&copy; 2025 KIW Construction & Metal Works</p>
+  <small style="display: block; margin-top: 5px; font-size: 0.75rem; color: #aaa;">
+    Developed by <strong><a href="https://wa.me/94766322487" target="_blank" style="color: #aaa; text-decoration: none;">KD Developers</a></strong>
+  </small>
+</footer>
+
+</body>
+</html>
