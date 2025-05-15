@@ -78,23 +78,23 @@
       </div>
 
       <div id="roofings" class="slideshow">
-        <img src="images/roof1.jpg" class="active" alt="Roofing 1" />
-        <img src="images/roof2.jpg" alt="Roofing 2" />
+        <img src="roof1.jpg" alt="Roofing 1" />
+        <img src="roof2.jpg" alt="Roofing 2" />
       </div>
 
       <div id="ceilings" class="slideshow">
-        <img src="images/ceiling1.jpg" class="active" alt="Ceiling 1" />
-        <img src="images/ceiling2.jpg" alt="Ceiling 2" />
+        <img src="https://images.unsplash.com/photo-1633767223611-8b496e3a65e4" class="active" alt="Ceiling 1" />
+        <img src="https://images.unsplash.com/photo-1578562951239-78f7a4dede29" alt="Ceiling 2" />
       </div>
 
       <div id="gates" class="slideshow">
-        <img src="images/gate1.jpg" class="active" alt="Gate 1" />
-        <img src="images/gate2.jpg" alt="Gate 2" />
+        <img src="gate1.jpg" alt="Gate 1" />
+        <img src="https://images.unsplash.com/photo-1614583229410-f07ae137b370" alt="Gate 2" />
       </div>
 
       <div id="grills" class="slideshow">
-        <img src="images/grill1.jpg" class="active" alt="Grill 1" />
-        <img src="images/grill2.jpg" alt="Grill 2" />
+        <img src="grill1.jpg" alt="Grill 1" />
+        <img src="grill2.jpg alt="Grill 2" />
       </div>
     </section>
   </main>
@@ -106,6 +106,7 @@
   <script>
     const tabs = document.querySelectorAll(".tabs button");
     const slideshows = document.querySelectorAll(".slideshow");
+    const slideIntervals = {};
 
     function showGallery(category) {
       tabs.forEach(btn => btn.classList.remove("active"));
@@ -114,10 +115,11 @@
 
       document.querySelector(`.tabs button[onclick="showGallery('${category}')"]`).classList.add("active");
 
+      // Stop all previous slideshows
+      Object.values(slideIntervals).forEach(clearInterval);
+
       startSlideshow(category);
     }
-
-    const slideIntervals = {};
 
     function startSlideshow(category) {
       const slideshow = document.getElementById(category);
@@ -126,8 +128,6 @@
 
       images.forEach(img => img.classList.remove("active"));
       images[0].classList.add("active");
-
-      clearInterval(slideIntervals[category]);
 
       slideIntervals[category] = setInterval(() => {
         images[index].classList.remove("active");
