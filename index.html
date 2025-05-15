@@ -25,6 +25,7 @@
       color: #fff;
       margin: 0 1rem;
       text-decoration: none;
+      cursor: pointer;
     }
     section {
       padding: 2rem;
@@ -61,6 +62,7 @@
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="gallery.html">Gallery</a>
+      <a href="employees.html">Employees</a>
     </nav>
   </header>
 
@@ -75,42 +77,33 @@
     </section>
 
     <section id="contact">
-  <h2>Hire Us</h2>
-  <form id="contactForm">
-    <input type="text" id="name" name="name" placeholder="Your Name" required />
-    <input type="email" id="email" name="email" placeholder="Your Email" required />
-    <textarea id="message" name="message" rows="5" placeholder="Tell us about your project..." required></textarea>
-    <button type="submit">Discuss Your Project</button>
-  </form>
-</section>
-
-<script>
-  document.getElementById('contactForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent form submission
-
-    // Get form values
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-
-    // Construct the message to send via WhatsApp
-    const whatsappMessage = `Name: ${name}%0AEmail: ${email}%0AProject: ${message}`;
-
-    // Open WhatsApp with the pre-filled message
-    const whatsappLink = `https://wa.me/94779746977?text=${whatsappMessage}`;
-    window.open(whatsappLink, '_blank');
-  });
-</script>
-
-
+      <h2>Hire Us</h2>
+      <form id="contactForm">
+        <input type="text" id="name" name="name" placeholder="Your Name" required />
+        <input type="email" id="email" name="email" placeholder="Your Email" required />
+        <textarea id="message" name="message" rows="5" placeholder="Tell us about your project..." required></textarea>
+        <button type="submit">Discuss Your Project</button>
+      </form>
+    </section>
   </main>
 
- <footer>
-  <p>&copy; 2025 KIW Construction & Metal Works</p>
-  <small style="display: block; margin-top: 5px; font-size: 0.75rem; color: #aaa;">
-    Developed by <strong><a href="https://wa.me/94766322487" target="_blank" style="color: #aaa; text-decoration: none;">KD Developers</a></strong>
-  </small>
-</footer>
+  <footer>
+    <p>&copy; 2025 KIW Construction & Metal Works</p>
+    <small style="display: block; margin-top: 5px; font-size: 0.75rem; color: #aaa;">
+      Developed by <strong><a href="https://wa.me/94766322487" target="_blank" style="color: #aaa; text-decoration: none;">KD Developers</a></strong>
+    </small>
+  </footer>
 
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+      const whatsappMessage = `Name: ${name}%0AEmail: ${email}%0AProject: ${message}`;
+      const whatsappLink = `https://wa.me/94779746977?text=${whatsappMessage}`;
+      window.open(whatsappLink, '_blank');
+    });
+  </script>
 </body>
 </html>
