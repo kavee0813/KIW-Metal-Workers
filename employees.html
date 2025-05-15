@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Employees - KIW</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header, footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+    main {
+      flex: 1;
+      padding: 2rem;
+    }
+    .employee-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 2rem;
+      justify-items: center;
+    }
+    .employee-card {
+      text-align: center;
+    }
+    .employee-card img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border: 2px solid #ccc;
+    }
+    .employee-card a {
+      display: block;
+      margin-top: 0.5rem;
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Our Employees</h1>
+  </header>
+
+  <main>
+    <div class="employee-grid">
+      <div class="employee-card">
+        <img src="images/priyantha.jpg" alt="Mr. Priyantha" />
+        <a href="priyantha.html">Mr. Priyantha</a>
+      </div>
+      <div class="employee-card">
+        <img src="images/dushmantha.jpg" alt="Mr. Dushmantha" />
+        <a href="dushmantha.html">Mr. Dushmantha</a>
+      </div>
+      <div class="employee-card">
+        <img src="images/teachni.jpg" alt="Mr. Teachni" />
+        <a href="teachni.html">Mr. Teachni</a>
+      </div>
+      <div class="employee-card">
+        <img src="images/upali.jpg" alt="Mr. Upali" />
+        <a href="upali.html">Mr. Upali</a>
+      </div>
+      <div class="employee-card">
+        <img src="images/sarath.jpg" alt="Mr. Sarath" />
+        <a href="sarath.html">Mr. Sarath</a>
+      </div>
+      <div class="employee-card">
+        <img src="images/mahesha.jpg" alt="Mr. Mahesha" />
+        <a href="mahesha.html">Mr. Mahesha</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 KIW Construction & Metal Works</p>
+  </footer>
+</body>
+</html>
